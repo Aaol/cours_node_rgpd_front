@@ -1,0 +1,18 @@
+<h1 mat-dialog-title>Connexion</h1>
+<div mat-dialog-content class="login-full-width">
+
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="Nom d'utilisateur" />
+  </mat-form-field>
+  <mat-form-field class="field-full-width">
+    <input matInput placeholder="Mot de Passe" />
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="register()">
+    Créer un compte
+  </button>
+  <button mat-button mat-dialog-close >
+    Se Connecter
+  </button>
+</div>

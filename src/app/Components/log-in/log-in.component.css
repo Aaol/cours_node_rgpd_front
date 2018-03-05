@@ -1,0 +1,9 @@
+.login-full-width{
+    min-width: 100px;
+    max-width: 400px;
+    width: 100%
+}
+
+.field-full-width{
+    width: 100%;
+}
