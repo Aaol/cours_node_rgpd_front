@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>Newsletter</h1>
+<div mat-dialog-content>
+  <mat-checkbox [(ngModel)]="enable">
+    Acceptez-vous de recevoir des informations de notre part par email ?
+  </mat-checkbox>
+</div>
+<div mat-dialog-actions>
+  <button mat-button mat-raised-button [mat-dialog-close]="enable">
+    Valider
+  </button>
+</div>

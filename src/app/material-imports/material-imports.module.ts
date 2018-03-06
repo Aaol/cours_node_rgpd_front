@@ -6,18 +6,21 @@ import {
   , MatInputModule
   , MatGridListModule
   , MatCardModule
+  , MatCheckboxModule
 } from '@angular/material';
 @NgModule({
   imports: [
     MatToolbarModule
     , MatDialogModule
     , MatGridListModule
+    , MatCheckboxModule
     , MatCardModule
     , MatInputModule
     , MatButtonModule
   ],
   exports: [
     MatToolbarModule
+    , MatCheckboxModule
     , MatDialogModule
     , MatInputModule
     , MatGridListModule

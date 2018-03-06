@@ -6,6 +6,7 @@ import { RegisterComponent } from './Components/register/register.component';
 const routes: Routes = [
   { path: '', component: HomeComponent }
   , { path: 'register', component: RegisterComponent }
+  , { path: 'settings', loadChildren: 'app/settings/settings.module#SettingsModule'}
   , {path: '**', pathMatch: 'full', redirectTo: ''}
 ];
 

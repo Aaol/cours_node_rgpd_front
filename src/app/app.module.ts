@@ -12,17 +12,21 @@ import { MaterialImportsModule } from './material-imports/material-imports.modul
 import { RegisterComponent } from './Components/register/register.component';
 import { UserService } from './services/user.service';
 
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { NewsletterComponent } from './Components/register/newsletter/newsletter.component';
+import { HeadersInterceptor } from './Interceptors/headers.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
     HomeComponent,
     LogInComponent,
-    RegisterComponent
+    RegisterComponent,
+    NewsletterComponent
   ],
   entryComponents: [
     LogInComponent
+    , NewsletterComponent
   ],
   imports: [
     BrowserModule
@@ -35,6 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     UserService
+    , {
+      provide: HTTP_INTERCEPTORS,
+      useClass: HeadersInterceptor,
+      multi: true,
+  }
   ],
   bootstrap: [AppComponent]
 })

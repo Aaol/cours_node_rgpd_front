@@ -3,8 +3,13 @@
     Accueil
   </button>
   <span class="example-fill-remaining-space"></span>
-  <button mat-button (click)="logIn()">
-    Se Connecter
-  </button>
-  
+  <div *ngIf="!user">
+    <button mat-button (click)="logIn()">
+      Se Connecter
+    </button>
+  </div>
+  <div *ngIf="user">
+    {{user}}
+  </div>
+
 </mat-toolbar>

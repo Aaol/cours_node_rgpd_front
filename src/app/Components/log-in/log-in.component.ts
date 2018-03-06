@@ -26,4 +26,9 @@ export class LogInComponent implements OnInit {
     this.router.navigate(['register']);
   }
 
+  login() {
+    this.userService.logIn(this.model)
+    .subscribe(res => console.log(res));
+  }
+
 }

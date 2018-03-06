@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material';
 import { LogInComponent } from '../log-in/log-in.component';
+import { UserService } from '../../services/user.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -9,8 +10,11 @@ import { LogInComponent } from '../log-in/log-in.component';
 })
 export class NavBarComponent implements OnInit {
 
-  constructor(private dialog: MatDialog) {
+  public user: string;
 
+  constructor(private dialog: MatDialog
+  , private userService: UserService) {
+    this.userService.user.subscribe(user => this.user = user);
   }
 
   ngOnInit() {
