@@ -15,6 +15,9 @@
   </div>
   <div *ngIf="user">
     {{user}}
+    <button mat-button routerLink="settings">
+      Paramètres du compte
+    </button>
     <button mat-button (click)="logOff()">
       Deconnexion
     </button>

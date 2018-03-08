@@ -29,7 +29,8 @@ export class LogInComponent implements OnInit {
   login() {
     this.userService.logIn(this.model)
     .subscribe(data => {
-      console.log(data);
+      this.dialogRef.close();
+      this.router.navigateByUrl('');
     },
     err => {
       if (err.status === 404) {
