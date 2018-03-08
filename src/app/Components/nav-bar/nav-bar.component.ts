@@ -23,5 +23,7 @@ export class NavBarComponent implements OnInit {
   logIn() {
     this.dialog.open(LogInComponent);
   }
-
+  logOff() {
+    this.userService.logOff();
+  }
 }

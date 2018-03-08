@@ -1,11 +1,10 @@
 <h1 mat-dialog-title>Connexion</h1>
 <div mat-dialog-content class="login-full-width">
-
   <mat-form-field class="field-full-width">
-    <input matInput placeholder="Nom d'utilisateur" />
+    <input matInput placeholder="Nom d'utilisateur" [(ngModel)]="model.username"/>
   </mat-form-field>
   <mat-form-field class="field-full-width">
-    <input matInput type="password" placeholder="Mot de Passe" />
+    <input matInput type="password" placeholder="Mot de Passe"  [(ngModel)]="model.password"/>
   </mat-form-field>
 </div>
 <div mat-dialog-actions>

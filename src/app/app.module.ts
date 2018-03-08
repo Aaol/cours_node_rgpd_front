@@ -15,6 +15,10 @@ import { UserService } from './services/user.service';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NewsletterComponent } from './Components/register/newsletter/newsletter.component';
 import { HeadersInterceptor } from './Interceptors/headers.interceptor';
+import { MapComponent } from './Components/map/map.component';
+
+import { LeafletModule } from '@asymmetrik/ngx-leaflet';
+import { FooterComponent } from './Components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +26,9 @@ import { HeadersInterceptor } from './Interceptors/headers.interceptor';
     HomeComponent,
     LogInComponent,
     RegisterComponent,
-    NewsletterComponent
+    NewsletterComponent,
+    MapComponent,
+    FooterComponent
   ],
   entryComponents: [
     LogInComponent
@@ -34,6 +40,7 @@ import { HeadersInterceptor } from './Interceptors/headers.interceptor';
     , HttpClientModule
     , MaterialImportsModule
     , FormsModule
+    , LeafletModule.forRoot()
     , ReactiveFormsModule
     , AppRoutingModule
   ],

@@ -17,8 +17,11 @@ export class UserService {
   public user: Observable<string>;
   constructor(private httpClient: HttpClient) {
     this.user = new Observable(observer => this.subject.subscribe(observer));
-    if (localStorage.getItem('id') == null) {
+    const localUser = localStorage.getItem('user');
+    if (localUser == null) {
       this.subject.next(null);
+    } else {
+      this.subject.next(localUser);
     }
   }
 
@@ -33,8 +36,13 @@ export class UserService {
 
   logIn(user: UserLogin) {
     return this.httpClient.post<UserLoginResponse>(environment.apiUrl + 'sign/in', JSON.stringify(user))
-      .do(response => this.subject.next(response.username));
+      .do (response => {
+        localStorage.setItem('user', response.username);
+        this.subject.next(response.username);
+      });
   }
   logOff() {
+    localStorage.clear();
+    this.subject.next(null);
   }
 }

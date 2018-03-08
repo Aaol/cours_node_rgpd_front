@@ -2,6 +2,11 @@
   <button mat-button routerLink="/">
     Accueil
   </button>
+  <div *ngIf="user">
+      <button mat-button routerLink="map">
+        Carte des restaurants
+      </button>
+    </div>
   <span class="example-fill-remaining-space"></span>
   <div *ngIf="!user">
     <button mat-button (click)="logIn()">
@@ -10,6 +15,9 @@
   </div>
   <div *ngIf="user">
     {{user}}
+    <button mat-button (click)="logOff()">
+      Deconnexion
+    </button>
   </div>
 
 </mat-toolbar>

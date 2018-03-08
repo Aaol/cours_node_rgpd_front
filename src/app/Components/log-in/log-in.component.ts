@@ -11,7 +11,7 @@ import { MatDialogRef } from '@angular/material';
 })
 export class LogInComponent implements OnInit {
   public model: UserLogin;
-
+  public error: string;
   constructor(private userService: UserService
     , private router: Router
     , public dialogRef: MatDialogRef<LogInComponent>) {
@@ -28,7 +28,15 @@ export class LogInComponent implements OnInit {
 
   login() {
     this.userService.logIn(this.model)
-    .subscribe(res => console.log(res));
+    .subscribe(data => {
+      console.log(data);
+    },
+    err => {
+      if (err.status === 404) {
+        this.error = 'Mot de passe ou login incorect';
+      }
+    }
+    );
   }
 
 }
