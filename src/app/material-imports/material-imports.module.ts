@@ -8,6 +8,7 @@ import {
   , MatCardModule
   , MatCheckboxModule
   , MatSidenavModule
+  , MatTabsModule
 } from '@angular/material';
 @NgModule({
   imports: [
@@ -18,6 +19,7 @@ import {
     , MatSidenavModule
     , MatCardModule
     , MatInputModule
+    , MatTabsModule
     , MatButtonModule
   ],
   exports: [
@@ -28,6 +30,7 @@ import {
     , MatSidenavModule
     , MatGridListModule
     , MatCardModule
+    , MatTabsModule
     , MatButtonModule
   ],
   declarations: []
